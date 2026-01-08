@@ -3,29 +3,31 @@ object Form1: TForm1
   Top = 0
   Caption = 'Form1'
   ClientHeight = 480
-  ClientWidth = 246
+  ClientWidth = 322
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 3
   object SetNumberButton: TButton
+    Anchors = [akLeft, akTop, akRight]
     Position.X = 8.000000000000000000
     Position.Y = 8.000000000000000000
-    Size.Width = 230.000000000000000000
+    Size.Width = 306.000000000000000000
     Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    Text = 'SetNumberButton'
+    Text = 'SetNumber Button'
     OnClick = SetNumberButtonClick
   end
   object ScheduleNotificationButton: TButton
+    Anchors = [akLeft, akTop, akRight]
     Position.X = 8.000000000000000000
     Position.Y = 60.000000000000000000
-    Size.Width = 230.000000000000000000
+    Size.Width = 306.000000000000000000
     Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
-    Text = 'ScheduleNotificationButton'
+    Text = 'ScheduleNotification Button'
     OnClick = ScheduleNotificationButtonClick
   end
   object NotificationCenter1: TNotificationCenter

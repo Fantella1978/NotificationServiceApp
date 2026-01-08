@@ -34,13 +34,13 @@ begin
   MyNotification := NotificationCenter1.CreateNotification;
   try
     MyNotification.Name := 'NotificationName';
-    MyNotification.AlertBody := 'Delphi for your mobile device is here!';
+    MyNotification.AlertBody := 'Delphi Notification fired in 3 seconds.';
     // Fired in 3 seconds
     MyNotification.FireDate := Now + EncodeTime(0, 0, 3, 0);
     // Send notification to the notification center
     NotificationCenter1.ScheduleNotification(MyNotification);
   finally
-    MyNotification.DisposeOf;
+    MyNotification.Free;
   end;
 end;
 
@@ -55,11 +55,11 @@ begin
       // Set the icon or notification number
       MyNotification.Number :=18;
       // Set the alert message
-      MyNotification.AlertBody := 'Delphi for your mobile device is here!';
+      MyNotification.AlertBody := 'Delphi Notification with Number 18.';
       // Note: You must send the notification to the notification center for the Icon Badge Number to be displayed.
       NotificationCenter1.PresentNotification(MyNotification);
   finally
-    MyNotification.DisposeOf;
+    MyNotification.Free;
   end;
 end;
 
