@@ -5,7 +5,7 @@
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Android</Platform>
+        <Platform Condition="'$(Platform)'==''">Android64</Platform>
         <TargetedPlatforms>693267</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>NotificationServiceApp.dpr</MainSource>
@@ -827,7 +827,7 @@
                 </DeployFile>
                 <DeployFile LocalName="ringtone-020-365650.mp3" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Android64">
-                        <RemoteDir>.\assets\internal\</RemoteDir>
+                        <RemoteDir>res\raw\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -839,7 +839,7 @@
                 </DeployFile>
                 <DeployFile LocalName="ringtone-020-365650_2.mp3" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Android64">
-                        <RemoteDir>.\assets\internal\</RemoteDir>
+                        <RemoteDir>assets\internal\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

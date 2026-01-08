@@ -168,7 +168,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="ringtone-020-365650.mp3" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>NotificationServiceApp\assets\internal\</RemoteDir>
+            <RemoteDir>NotificationServiceApp\res\raw\</RemoteDir>
             <RemoteName>ringtone-020-365650.mp3</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
             <Operation>0</Operation>
