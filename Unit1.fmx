@@ -11,7 +11,7 @@ object Form1: TForm1
   object SetNumberButton: TButton
     Anchors = [akLeft, akTop, akRight]
     Position.X = 8.000000000000000000
-    Position.Y = 8.000000000000000000
+    Position.Y = 164.000000000000000000
     Size.Width = 306.000000000000000000
     Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
@@ -30,8 +30,63 @@ object Form1: TForm1
     Text = 'ScheduleNotification Button'
     OnClick = ScheduleNotificationButtonClick
   end
+  object RepeatedNotificationButton: TButton
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 8.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 306.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'RepeatedNotification Button'
+    OnClick = RepeatedNotificationButtonClick
+  end
+  object CancelNotificationButton: TButton
+    Anchors = [akLeft, akRight, akBottom]
+    Position.X = 8.000000000000000000
+    Position.Y = 428.000000000000000000
+    Size.Width = 306.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'CancelNotification Button'
+    OnClick = CancelNotificationButtonClick
+  end
+  object PresentNotificationButton: TButton
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 306.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'PresentNotification Button'
+    OnClick = PresentNotificationButtonClick
+  end
+  object SoundNotificationButton: TButton
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 8.000000000000000000
+    Position.Y = 216.000000000000000000
+    Size.Width = 306.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    Text = 'SoundNotification Button'
+    OnClick = SoundNotificationButtonClick
+  end
+  object SoundNotificationButton2: TButton
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 8.000000000000000000
+    Position.Y = 268.000000000000000000
+    Size.Width = 306.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Text = 'SoundNotification Button 2'
+    OnClick = SoundNotificationButton2Click
+  end
   object NotificationCenter1: TNotificationCenter
-    Left = 56
-    Top = 288
+    Left = 88
+    Top = 376
   end
 end
