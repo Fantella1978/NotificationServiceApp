@@ -16,7 +16,7 @@ object Form1: TForm1
     Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    Text = 'SetNumber Button'
+    Text = 'Notification Number'
     OnClick = SetNumberButtonClick
   end
   object ScheduleNotificationButton: TButton
@@ -27,7 +27,7 @@ object Form1: TForm1
     Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
-    Text = 'ScheduleNotification Button'
+    Text = 'Schedule Notification'
     OnClick = ScheduleNotificationButtonClick
   end
   object RepeatedNotificationButton: TButton
@@ -38,7 +38,7 @@ object Form1: TForm1
     Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 5
-    Text = 'RepeatedNotification Button'
+    Text = 'Repeated Notification'
     OnClick = RepeatedNotificationButtonClick
   end
   object CancelNotificationButton: TButton
@@ -49,7 +49,7 @@ object Form1: TForm1
     Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 6
-    Text = 'CancelNotification Button'
+    Text = 'Cancel Notification'
     OnClick = CancelNotificationButtonClick
   end
   object PresentNotificationButton: TButton
@@ -60,7 +60,7 @@ object Form1: TForm1
     Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 7
-    Text = 'PresentNotification Button'
+    Text = 'Present Notification'
     OnClick = PresentNotificationButtonClick
   end
   object SoundNotificationButton: TButton
@@ -71,7 +71,7 @@ object Form1: TForm1
     Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 9
-    Text = 'SoundNotification Button'
+    Text = 'Sound Notification Android 7-'
     OnClick = SoundNotificationButtonClick
   end
   object SoundNotificationButton2: TButton
@@ -82,7 +82,7 @@ object Form1: TForm1
     Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 11
-    Text = 'SoundNotification Button 2'
+    Text = 'Sound Notification Android 8+'
     OnClick = SoundNotificationButton2Click
   end
   object NotificationCenter1: TNotificationCenter

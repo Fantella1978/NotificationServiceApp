@@ -126,67 +126,91 @@ begin
     Result := 'myiOSSound.caf';
   {$ENDIF}
   {$IFDEF ANDROID}
-    // Result := TPath.Combine(TPath.GetSharedDocumentsPath, 'ringtone-020-365650.mp3');
-    Result := TPath.Combine(TPath.GetDocumentsPath, 'ringtone-020-365650.mp3'); // https://embt.atlassian.net/browse/RS-116170
-                                                                                // https://quality.embarcadero.com/browse/RSP-40419
+    // Result := TPath.Combine(TPath.GetSharedDocumentsPath, 'ringtone-020-365650_2.mp3');
+    Result := TPath.Combine(TPath.GetDocumentsPath, 'ringtone-020-365650_2.mp3');
 
+    // https://embt.atlassian.net/browse/RS-116170
+    // https://quality.embarcadero.com/browse/RSP-40419
     // Result := 'android.resource://com.embarcadero.NotificationServiceApp/raw/ringtone-020-365650'; // res/raw/ringtone-020-365650.mp3
+
   {$ENDIF}
   {$IFDEF MSWINDOWS}
-    Result := TPath.Combine(TPath.GetSharedDocumentsPath, 'ringtone-020-365650.mp3');
+    Result := TPath.Combine(TPath.GetSharedDocumentsPath, 'ringtone-020-365650_2.mp3');
   {$ENDIF}
 end;
 
 procedure TForm1.SoundNotificationButton2Click(Sender: TObject);
 begin
-  var NotificationChannel := NotificationCenter1.CreateChannel('notification_channel_id_default_1', 'Default notification channel 1', 'Default notification channel 1');
-  try
-    NotificationChannel.Importance := TImportance.High;
-    NotificationChannel.SoundName := 'android.resource://com.embarcadero.NotificationServiceApp/raw/ringtone-020-365650'; // For Android 8.0+
-    NotificationCenter1.CreateOrUpdateChannel(NotificationChannel);
+  if TOSVersion.Check(8) then
+  begin
+    var NotificationChannel := NotificationCenter1.CreateChannel('notification_channel_id_default_1', 'Default notification channel 1', 'Default notification channel 1');
+    try
+      NotificationChannel.Importance := TImportance.High;
+      NotificationChannel.SoundName := 'android.resource://com.embarcadero.NotificationServiceApp/raw/ringtone-020-365650'; // For Android 8.0+
+      NotificationCenter1.CreateOrUpdateChannel(NotificationChannel);
+      var Notification := NotificationCenter1.CreateNotification;
+      try
+        Notification.Title := 'NotificationTitle';
+        Notification.AlertBody := 'User''s Sound Notification is here!';
+        Notification.ChannelId := 'notification_channel_id_default_1';
+        Notification.EnableSound := True;
+        Notification.SoundName := 'android.resource://com.embarcadero.NotificationServiceApp/raw/ringtone-020-365650'; // For Android 7.1-
+        NotificationCenter1.PresentNotification(Notification);
+      finally
+        Notification.Free;
+      end;
+    finally
+      NotificationChannel.Free;
+    end;
+  end
+  else
+  begin
+    ShowMessage('OS: ' + TOSVersion.ToString);
 
     var Notification := NotificationCenter1.CreateNotification;
     try
       Notification.Title := 'NotificationTitle';
-      Notification.AlertBody := 'Notification content';
-      Notification.ChannelId := 'notification_channel_id_default_1';
+      Notification.AlertBody := 'User''s Sound Notification is here!';
       Notification.EnableSound := True;
       Notification.SoundName := 'android.resource://com.embarcadero.NotificationServiceApp/raw/ringtone-020-365650'; // For Android 7.1-
       NotificationCenter1.PresentNotification(Notification);
     finally
       Notification.Free;
     end;
-  finally
-    NotificationChannel.Free;
   end;
 end;
 
 procedure TForm1.SoundNotificationButtonClick(Sender: TObject);
 var
   MyNotification: TNotification;
+  SoundFile: string;
 begin
-  MyNotification := NotificationCenter1.CreateNotification;
-  try
-    MyNotification.Name := 'NotificationName';
-    MyNotification.AlertBody := 'User''s Sound Notification is here!';
-    MyNotification.FireDate := Now;
+  if TOSVersion.Check(8) then
+  begin
+    ShowMessage('OS: ' + TOSVersion.ToString);
+  end
+  else
+  begin
+    MyNotification := NotificationCenter1.CreateNotification;
+    try
+      MyNotification.Name := 'NotificationName';
+      MyNotification.AlertBody := 'User''s Sound Notification is here!';
+      MyNotification.FireDate := Now;
 
-    // MyNotification.ChannelId := 'notification_channel_id_default_1';
-    MyNotification.EnableSound := True;
-    MyNotification.SoundName := GetSoundName;
-
-//    if not TFile.Exists(MyNotification.SoundName)
-//      then ShowMessage('Sound file not found: ' + MyNotification.SoundName)
-//      else
-//        // Send message to the notification center
-//        // NotificationCenter1.ScheduleNotification(MyNotification);
-//        NotificationCenter1.PresentNotification(MyNotification);
-
-    // NotificationCenter1.ScheduleNotification(MyNotification);
-    NotificationCenter1.PresentNotification(MyNotification);
-
-  finally
-    MyNotification.Free;
+      SoundFile := GetSoundName;
+      if not TFile.Exists(SoundFile)
+        then ShowMessage('Sound file not found: ' + SoundFile)
+        else
+          begin
+            MyNotification.EnableSound := True;
+            MyNotification.SoundName := GetSoundName;
+          end;
+      // Send message to the notification center
+      // NotificationCenter1.ScheduleNotification(MyNotification);
+      NotificationCenter1.PresentNotification(MyNotification);
+    finally
+      MyNotification.Free;
+    end;
   end;
 end;
 

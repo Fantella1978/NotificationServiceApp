@@ -5,7 +5,7 @@
     </ProjectExtensions>
     <PropertyGroup>
         <DeviceId Condition="'$(Platform)'=='Android'">92KAY01TTX</DeviceId>
-        <DeviceId Condition="'$(Platform)'=='Android64'">92KAY01TTX</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='Android64'"/>
         <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
         <DeviceId Condition="'$(Platform)'=='iOSSimARM64'"/>
     </PropertyGroup>
@@ -102,6 +102,15 @@
             <RemoteName>ic_launcher_background.xml</RemoteName>
             <DeployClass>Android_AdaptiveIconBackground</DeployClass>
             <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="ringtone-020-365650_2.mp3" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>NotificationServiceApp\assets\internal\</RemoteDir>
+            <RemoteName>ringtone-020-365650_2.mp3</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>

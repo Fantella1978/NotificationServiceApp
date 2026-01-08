@@ -318,6 +318,7 @@
             <FormType>fmx</FormType>
         </DCCReference>
         <None Include="ringtone-020-365650.mp3"/>
+        <None Include="ringtone-020-365650_2.mp3"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -592,6 +593,12 @@
                 <DeployFile LocalName="ringtone-020-365650.mp3" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Android">
                         <RemoteDir>res\raw\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="ringtone-020-365650_2.mp3" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Android">
+                        <RemoteDir>assets\internal\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
