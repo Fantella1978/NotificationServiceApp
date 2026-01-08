@@ -182,8 +182,8 @@ begin
 //        // NotificationCenter1.ScheduleNotification(MyNotification);
 //        NotificationCenter1.PresentNotification(MyNotification);
 
-    NotificationCenter1.ScheduleNotification(MyNotification);
-    // NotificationCenter1.PresentNotification(MyNotification);
+    // NotificationCenter1.ScheduleNotification(MyNotification);
+    NotificationCenter1.PresentNotification(MyNotification);
 
   finally
     MyNotification.Free;
