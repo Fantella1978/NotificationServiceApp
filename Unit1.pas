@@ -201,10 +201,11 @@ begin
         var Notification := NotificationCenter1.CreateNotification;
         try
           Notification.Title := 'NotificationTitle';
+          Notification.Name := 'NotificationName';
           Notification.AlertBody := 'User''s Sound Notification is here!';
           Notification.ChannelId := 'notification_channel_id_default_1';
           Notification.EnableSound := True;
-          Notification.SoundName := 'android.resource://com.embarcadero.NotificationServiceApp/raw/ringtone-020-365650'; // For Android 7.1-
+          // Notification.SoundName := 'android.resource://com.embarcadero.NotificationServiceApp/raw/ringtone-020-365650'; // For Android 7.1-
           NotificationCenter1.PresentNotification(Notification);
         finally
           Notification.Free;
@@ -220,6 +221,7 @@ begin
       var Notification := NotificationCenter1.CreateNotification;
       try
         Notification.Title := 'NotificationTitle';
+        Notification.Name := 'NotificationName';
         Notification.AlertBody := 'User''s Sound Notification is here!';
         Notification.EnableSound := True;
         Notification.SoundName := 'android.resource://com.embarcadero.NotificationServiceApp/raw/ringtone-020-365650'; // For Android 7.1-
